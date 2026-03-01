@@ -33,17 +33,20 @@ CI, linting, release automation, and project scaffolding extracted from [chawan]
    ```
 3. If your project doesn't use bashcov, remove the `coverage` target from `Makefile` and the `coverage` job from `.github/workflows/ci.yml`
 
-## Tool Versions
+## Pinned Versions
 
-All GitHub Actions are pinned to commit SHAs for reproducibility. Versions at the time of extraction:
+All GitHub Actions are pinned to commit SHAs for reproducibility.
 
-| Tool | Version |
-|------|---------|
-| ShellCheck | 0.10.0 |
-| shfmt | latest (via `mfinelli/setup-shfmt`) |
-| bats-core | 4.0.0 (via `bats-core/bats-action`) |
-| bashcov | 3.3.0 |
-| tagpr | 1.17.0 |
+| Tool | Version | Pinned in |
+|------|---------|-----------|
+| `actions/checkout` | v6.0.2 | `ci.yml`, `tagpr.yml` |
+| `actions/cache` | v5.0.3 | `ci.yml` |
+| `mfinelli/setup-shfmt` | v4.0.1 | `ci.yml` |
+| `bats-core/bats-action` | 4.0.0 | `ci.yml` |
+| `Songmu/tagpr` | v1.17.1 | `tagpr.yml` |
+| ShellCheck | 0.11.0 | `ci.yml` (`SHELLCHECK_VERSION` env) |
+| shfmt | 3.12.0 | `ci.yml` (`shfmt-version` input) |
+| bashcov | 3.3.0 | `ci.yml` (`gem install` arg) |
 
 ## License
 
